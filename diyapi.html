@@ -1,0 +1,38 @@
+<script type="text/javascript" charset="utf-8" src="diy.dist.js"></script>
+<link rel="stylesheet" type="text/css" href="diyapi.css" />
+
+<script type="text/javascript" charset="utf-8">
+    var diy = diyClient();
+
+    diy('/explore/featured', function (err, body) {
+        if (err) return alert('Error fetching maker data.');
+        console.log(body.response);
+
+    var fourth = body.response[3];    
+	var first = body.response[1]; //grab the first project in the list
+    var fith = body.response[4];
+    var third = body.response[2];    
+    var second = body.response[0];
+    
+
+	var myTitle = document.getElementById('my-title'); //find the h1 element in the html
+	myTitle.innerHTML = first.title; // set the contents to be the title of our first project
+        
+    var myTitle = document.getElementById('my-title1'); //find the h1 element in the html   
+    myTitle.innerHTML = second.title; // set the contents to be the title of our first project
+        
+    var myTitle = document.getElementById('my-title2'); //find the h1 element in the html   
+    myTitle.innerHTML = third.title; // set the contents to be the title of our first project
+        
+    var myTitle = document.getElementById('my-title3'); //find the h1 element in the html   
+    myTitle.innerHTML = fourth.title; // set the contents to be the title of our first project         
+        
+    var myTitle = document.getElementById('my-title4'); //find the h1 element in the html   
+    myTitle.innerHTML = fith.title; // set the contents to be the title of our first project                 
+    });
+</script>
+<h1 id="my-title1">loading....</h1>
+<h1 id="my-title">loading....</h1>
+<h1 id="my-title2">loading....</h1>
+<h1 id="my-title3">loading....</h1>
+<h1 id="my-title4">loading....</h1>
